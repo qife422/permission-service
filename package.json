@@ -1,0 +1,14 @@
+{
+  "name": "s2.6",
+  "version": "1.0.0",
+  "description": "Permission service for location popup",
+  "main": "permissionService.js",
+  "scripts": {
+    "start": "node permissionService.js",
+    "test": "node test_request.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  }
+}

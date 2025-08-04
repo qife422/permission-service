@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request location permission</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+    .popup {
+      border: 2px solid #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .popup h1 {
+      margin-bottom: 20px;
+    }
+    .popup button {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .popup button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup">
+    <h1>Request location permission</h1>
+    <button onclick="setChoice('allow_while_visiting')">Allow while visiting the site</button>
+    <button onclick="setChoice('allow_once')">Allow this time</button>
+    <button onclick="setChoice('never_allow')">Never allow</button>
+  </div>
+
+  <script>
+    async function setChoice(choice) {
+      await fetch('/permission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ choice })
+      });
+      alert('You chose: ' + choice);
+    }
+  </script>
+</body>
+</html>
