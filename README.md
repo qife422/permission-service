@@ -14,7 +14,7 @@ The **Permission Service** provides a simple REST API for storing and retrieving
 
 2. **Install dependencies**
 ```bash
-npm instal
+npm install
 ```
 3. **Start the service**
 ```bash
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 2) Set or update choice
 Stores a new permission choice. Valid values are:
-```php
+```text
 allow_while_visiting
 allow_once
 never
@@ -117,12 +117,12 @@ C. UML Sequence Diagram
      |  GET /permission            |
      |---------------------------->|
      | <---------------------------| 204 No Content
-     |                              |
-     |  POST /permission            |
-     |  {"choice":"allow_once"}     |
+     |                             |
+     |  POST /permission           |
+     |  {"choice":"allow_once"}    |
      |---------------------------->|
      | <---------------------------| 200 OK {"choice":"allow_once"}
-     |                              |
+     |                             |
      |  GET /permission            |
      |---------------------------->|
      | <---------------------------| 200 OK {"choice":"allow_once"}
