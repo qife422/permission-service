@@ -24,7 +24,7 @@ npm start
 ## A. How to programmatically REQUEST data
 Base URL: http://localhost:3000
 
-Do not import or call our test harness—your teammate must write all of their own HTTP client code.
+Do not use the test harness—clients must implement their own HTTP calls.
 
 1) Query current choice
 Retrieves the currently stored permission choice (if any):
@@ -65,7 +65,7 @@ Content-Type: application/json
 {"choice":"allow_while_visiting"}
 ```
 
-B. How to RECEIVE Data
+## B. How to RECEIVE Data
 As JSON over HTTP:
 
 GET /permission
